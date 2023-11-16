@@ -1,4 +1,4 @@
-import type { Todo } from '$lib/types';
+import type { Todo } from './types';
 import { db } from './connection';
 
 export const todos = {
