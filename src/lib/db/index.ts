@@ -1,6 +1,8 @@
 import type { Todo } from './types';
 import { db } from './connection';
 
+export type { Todo };
+
 export const todos = {
   list: async (): Promise<Todo[]> => {
     return db.query.todos.findMany();

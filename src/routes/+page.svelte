@@ -2,6 +2,7 @@
   import type { PageData } from './$types';
   import Button from '$lib/components/button.svelte';
   import TextInput from '$lib/components/text-input.svelte';
+  import TodoItem from '$lib/components/todo-item.svelte';
 
   export let data: PageData;
 </script>
@@ -10,7 +11,7 @@
 
 {#if data.todos && data.todos.length > 0}
   {#each data.todos as todo}
-    <p>{todo.text}</p>
+    <TodoItem {todo} />
   {/each}
 {:else}
   <p>No todos yet</p>
