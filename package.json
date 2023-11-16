@@ -11,6 +11,7 @@
     "lint": "prettier --check .",
     "format": "prettier --write .",
     "db:generate": "drizzle-kit generate:sqlite",
+    "db:migrate": "drizzle-kit push:sqlite",
     "db:studio": "drizzle-kit studio"
   },
   "devDependencies": {

@@ -1,13 +1,9 @@
-import Database from 'better-sqlite3';
-import { DATABASE_URL } from '$env/static/private';
-import { drizzle } from 'drizzle-orm/better-sqlite3';
-
-const sqlite = new Database(DATABASE_URL);
-const db = drizzle(sqlite);
+import type { Todo } from '$lib/types';
+import { db } from './connection';
 
 export const todos = {
-  list: async () => {
-    //
+  list: async (): Promise<Todo[]> => {
+    return db.query.todos.findMany();
   },
   get: async (id: number) => {
     //

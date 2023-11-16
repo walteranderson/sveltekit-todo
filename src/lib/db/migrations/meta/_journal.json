@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1700171923565,
+      "tag": "0000_military_titania",
+      "breakpoints": true
+    }
+  ]
+}

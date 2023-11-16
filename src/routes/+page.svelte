@@ -1,8 +1,24 @@
+<script lang="ts">
+  import type { PageData } from './$types';
+  import Button from '$lib/components/button.svelte';
+  import TextInput from '$lib/components/text-input.svelte';
+
+  export let data: PageData;
+</script>
+
 <h1>SvelteKit Todos</h1>
 
+{#if data.todos && data.todos.length > 0}
+  {#each data.todos as todo}
+    <p>{todo.text}</p>
+  {/each}
+{:else}
+  <p>No todos yet</p>
+{/if}
+
 <form>
-  <input type="text" name="text" placeholder="Add a todo" />
-  <button type="submit">Add</button>
+  <TextInput type="text" name="text" placeholder="Add a todo" />
+  <Button type="submit">Add</Button>
 </form>
 
 <style lang="postcss">
@@ -13,8 +29,5 @@
   form {
     display: flex;
     gap: 1rem;
-    input {
-      flex: 1;
-    }
   }
 </style>
