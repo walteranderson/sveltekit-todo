@@ -1,2 +1,20 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>SvelteKit Todos</h1>
+
+<form>
+  <input type="text" name="text" placeholder="Add a todo" />
+  <button type="submit">Add</button>
+</form>
+
+<style lang="postcss">
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    gap: 1rem;
+    input {
+      flex: 1;
+    }
+  }
+</style>
