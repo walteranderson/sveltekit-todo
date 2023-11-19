@@ -31,6 +31,6 @@ export const Todos = {
       .returning();
   },
   delete: async (id: number) => {
-    //
+    return db.delete(TodosSchema).where(eq(TodosSchema.id, id));
   }
 };

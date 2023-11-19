@@ -22,12 +22,13 @@ export const actions = {
       return fail(400, { message: 'Todo not found' });
     }
 
-    console.log(todo);
     await Todos.update(id, {
       completed: !todo.completed
     });
   },
-  delete: async () => {
-    console.log('delete');
+  delete: async (event) => {
+    const formData = await event.request.formData();
+    const id = Number(formData.get('id'));
+    await Todos.delete(id);
   }
 } satisfies Actions;
