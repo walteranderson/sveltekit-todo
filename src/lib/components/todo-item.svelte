@@ -3,25 +3,29 @@
   import IconCheckboxUnchecked from '~icons/ci/checkbox-unchecked';
   import IconCheckboxCheck from '~icons/ci/checkbox-check';
   import IconTrashFull from '~icons/ci/trash-full';
+  import IconButton from './icon-button.svelte';
+  import { enhance } from '$app/forms';
 
   export let todo: Todo;
 </script>
 
-<div class="todo">
-  <span>
+<form method="POST" class="todo" use:enhance>
+  <input type="hidden" name="id" value={todo.id} />
+
+  <IconButton type="submit" formaction="/?/complete">
     {#if todo.completed}
       <IconCheckboxCheck />
     {:else}
       <IconCheckboxUnchecked />
     {/if}
-  </span>
+  </IconButton>
 
-  <p>{todo.text}</p>
+  <p class:completed={todo.completed}>{todo.text}</p>
 
-  <span>
+  <IconButton danger type="submit" formaction="/?/delete">
     <IconTrashFull />
-  </span>
-</div>
+  </IconButton>
+</form>
 
 <style lang="postcss">
   .todo {
@@ -33,12 +37,9 @@
     p {
       flex: 1;
       margin: 0;
-    }
-
-    span {
-      display: flex;
-      align-items: center;
-      font-size: 1.25rem;
+      &.completed {
+        text-decoration-line: line-through;
+      }
     }
   }
 </style>

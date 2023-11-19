@@ -3,6 +3,7 @@
   import Button from '$lib/components/button.svelte';
   import TextInput from '$lib/components/text-input.svelte';
   import TodoItem from '$lib/components/todo-item.svelte';
+  import { enhance } from '$app/forms';
 
   export let data: PageData;
 </script>
@@ -17,7 +18,7 @@
   <p>No todos yet</p>
 {/if}
 
-<form method="POST" action="?/create">
+<form method="POST" action="?/create" use:enhance>
   <TextInput type="text" name="text" placeholder="Add a todo" />
   <Button type="submit">Add</Button>
 </form>
