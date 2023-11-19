@@ -19,7 +19,7 @@
 {/if}
 
 <form method="POST" action="?/create" use:enhance>
-  <TextInput type="text" name="text" placeholder="Add a todo" />
+  <TextInput type="text" name="text" placeholder="Add a todo" autofocus />
   <Button type="submit">Add</Button>
 </form>
 
