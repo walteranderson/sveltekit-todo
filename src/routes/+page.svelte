@@ -17,7 +17,7 @@
   <p>No todos yet</p>
 {/if}
 
-<form>
+<form method="POST" action="?/create">
   <TextInput type="text" name="text" placeholder="Add a todo" />
   <Button type="submit">Add</Button>
 </form>
